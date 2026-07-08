@@ -1,0 +1,17 @@
+# python
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# node
+node_modules/
+.next/
+dist/
+build/
+
+# plasmo
+.plasmo/
+
+# os junk
+.DS_Store
