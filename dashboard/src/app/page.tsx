@@ -1,17 +1,26 @@
 import Image from "next/image"
+import Link from "next/link"
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       {/* header */}
-      <header className="mx-auto max-w-5xl px-6 pt-8">
-        <Image
-          src="/tailorpilot.png"
-          alt="TailorPilot"
-          width={80}
-          height={70}
-          priority
-        />
+      <header className="mx-auto max-w-5xl px-6 pt-8 flex items-center justify-between">
+        <a href="/">
+          <Image
+            src="/tailorpilot.png"
+            alt="TailorPilot"
+            width={80}
+            height={70}
+            priority
+          />
+        </a>
+        <Link
+          href="/login"
+          className="font-semibold text-umber hover:text-espresso transition-colors"
+        >
+          log in
+        </Link>
       </header>
 
       {/* hero */}
