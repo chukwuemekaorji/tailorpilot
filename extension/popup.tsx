@@ -1,5 +1,6 @@
 import { useState } from "react"
 import "./popup.css"
+import logo from "./assets/logo.png"
 
 /**
  * this is the whole popup ui for now - just enough to prove the extension
@@ -38,7 +39,7 @@ function IndexPopup() {
 
   return (
     <div className="popup">
-      <h2 className="popup__title">tailorpilot</h2>
+      <img src={logo} alt="tailorpilot" className="popup__logo" />
 
       <button className="popup__button" onClick={handleTailorClick} disabled={status === "loading"}>
         {status === "loading" ? "scanning page..." : "tailor my cv"}

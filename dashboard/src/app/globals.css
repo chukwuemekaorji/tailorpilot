@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+/* colors and fonts pulled from the tailorpilot logo, not a generic default */
+@theme {
+  --color-espresso: #1E120B;
+  --color-tangerine: #E8791F;
+  --color-ivory: #FAF3E8;
+  --color-amber: #F2B75C;
+  --color-umber: #3D2A1E;
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+/* the stitch line is the signature element of the whole design - a dashed
+   thread that visually "sews" the messy job posting text into a clean
+   tailored bullet. this keyframe just draws it in on load, rather than
+   having it appear all at once, which felt more like actual stitching. */
+@keyframes stitch-draw {
+  from {
+    stroke-dashoffset: 300;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.stitch-line {
+  stroke-dasharray: 8 6;
+  stroke-dashoffset: 300;
+  animation: stitch-draw 1.8s ease-out forwards;
+}
+
+/* respect people who'd rather not have things animate at them */
+@media (prefers-reduced-motion: reduce) {
+  .stitch-line {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
