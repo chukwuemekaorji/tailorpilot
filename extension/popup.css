@@ -1,0 +1,39 @@
+.popup {
+  box-sizing: border-box;
+  width: 300px;
+  padding: 16px;
+  font-family: Arial, sans-serif;
+  color: #1f2937;
+  background: linear-gradient(180deg, #ffffff 0%, #f5f7fb 100%);
+}
+
+.popup__title {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.popup__button {
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  background: #111827;
+  color: #ffffff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.popup__button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.popup__message {
+  margin: 12px 0 0;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.popup__message--error {
+  color: #b91c1c;
+}
