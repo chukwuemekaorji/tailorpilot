@@ -26,7 +26,6 @@ def test_grounded_bullet_survives():
                 source_span="built and maintained etl pipelines using python and airflow",
             )
         ],
-        cover_letter="dear hiring manager...",
     )
 
     result = ground_tailored_cv(tailored, ORIGINAL_CV)
@@ -43,7 +42,6 @@ def test_hallucinated_bullet_gets_stripped():
                 source_span="led a company-wide migration to kubernetes across 40 microservices",
             )
         ],
-        cover_letter="dear hiring manager...",
     )
 
     result = ground_tailored_cv(tailored, ORIGINAL_CV)

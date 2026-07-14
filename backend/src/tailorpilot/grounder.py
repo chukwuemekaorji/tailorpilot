@@ -57,5 +57,4 @@ def ground_tailored_cv(tailored_cv: TailoredCV, original_cv_text: str) -> Tailor
     return TailoredCV(
         summary=tailored_cv.summary,
         bullets=grounded_bullets,
-        cover_letter=tailored_cv.cover_letter,
     )

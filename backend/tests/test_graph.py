@@ -32,7 +32,6 @@ class FakeStructuredModel:
                     source_span="built and maintained etl pipelines using python and airflow at acme corp.",
                 )
             ],
-            cover_letter="dear hiring manager...",
         )
 
 
@@ -42,8 +41,12 @@ class FakeModel:
 
 
 def test_run_pipeline_returns_grounded_cv():
-    result = run_pipeline("some raw job posting text", ORIGINAL_CV, FakeModel())
+    tailored_cv, parsed_posting = run_pipeline("some raw job posting text", ORIGINAL_CV, FakeModel())
 
-    assert isinstance(result, TailoredCV)
-    assert len(result.bullets) == 1
-    assert result.summary
+    assert isinstance(tailored_cv, TailoredCV)
+    assert len(tailored_cv.bullets) == 1
+    assert tailored_cv.summary
+
+    assert isinstance(parsed_posting, ParsedJobPosting)
+    assert parsed_posting.title == "senior data engineer"
+    assert parsed_posting.company == "acme corp"

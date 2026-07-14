@@ -22,6 +22,7 @@ export default function Home() {
         <header className="mx-auto max-w-5xl px-6 pt-8 flex items-center justify-between">
           <a
             href="/"
+            aria-label="TailorPilot home"
             className="inline-block transition-transform duration-200 hover:scale-105"
           >
             <Image

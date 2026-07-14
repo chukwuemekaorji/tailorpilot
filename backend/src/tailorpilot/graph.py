@@ -71,8 +71,13 @@ pipeline = build_pipeline()
 
 def run_pipeline(
     raw_job_posting: str, original_cv_text: str, model: BaseChatModel
-) -> TailoredCV:
-    """the actual function everything else calls - runs the full pipeline end to end."""
+) -> tuple[TailoredCV, ParsedJobPosting]:
+    """
+    the actual function everything else calls - runs the full pipeline end
+    to end. also hands back the parsed posting (title/company) alongside
+    the tailored cv, so callers can save a real history entry instead of
+    a placeholder.
+    """
     result = pipeline.invoke(
         {
             "raw_job_posting": raw_job_posting,
@@ -83,4 +88,4 @@ def run_pipeline(
             "final_cv": None,
         }
     )
-    return result["final_cv"]
+    return result["final_cv"], result["parsed_posting"]

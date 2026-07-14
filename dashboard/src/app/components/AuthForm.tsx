@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, type SubmitEvent } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
@@ -13,7 +13,7 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
   const router = useRouter()
   const supabase = createClient()
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: SubmitEvent<HTMLFormElement>) => {
     e.preventDefault()
     setError(null)
 
@@ -33,7 +33,7 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-ivory px-6">
-      <a href="/" className="mb-8">
+      <a href="/" aria-label="TailorPilot home" className="mb-8">
         <Image src="/tailorpilot.png" alt="TailorPilot" width={160} height={140} priority />
       </a>
       <form onSubmit={handleSubmit} className="w-full max-w-sm">

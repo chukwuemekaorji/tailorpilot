@@ -13,7 +13,8 @@
     "ignoreDeprecations": "6.0",
     "strict": true,
     "types": [
-      "chrome"
+      "chrome",
+      "node"
     ],
     "paths": {
       "~*": [

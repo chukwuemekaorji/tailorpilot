@@ -1,18 +1,29 @@
 {
   "name": "extension",
-  "displayName": "Extension",
+  "displayName": "TailorPilot",
   "version": "0.0.1",
-  "description": "A basic Plasmo extension.",
+  "description": "Tailors your cv and cover letter to any job posting, right where you're applying.",
   "author": "Plasmo Corp. <foss@plasmo.com>",
   "scripts": {
     "dev": "plasmo dev",
+    "dev:chrome": "plasmo dev --target=chrome-mv3",
+    "dev:firefox": "plasmo dev --target=firefox-mv3",
+    "dev:edge": "plasmo dev --target=edge-mv3",
     "build": "plasmo build",
+    "build:chrome": "plasmo build --target=chrome-mv3",
+    "build:firefox": "plasmo build --target=firefox-mv3",
+    "build:edge": "plasmo build --target=edge-mv3",
+    "build:all": "npm run build:chrome && npm run build:firefox && npm run build:edge",
     "package": "plasmo package"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.110.2",
+    "docx": "^9.7.1",
+    "jspdf": "^4.2.1",
     "plasmo": "0.90.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "webextension-polyfill": "^0.12.0"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "4.1.1",
@@ -20,13 +31,15 @@
     "@types/node": "20.11.5",
     "@types/react": "18.2.48",
     "@types/react-dom": "18.2.18",
+    "@types/webextension-polyfill": "^0.12.5",
     "prettier": "3.2.4",
     "typescript": "5.3.3"
   },
   "manifest": {
     "permissions": [
       "activeTab",
-      "scripting"
+      "scripting",
+      "storage"
     ],
     "host_permissions": [
       "https://*/*"
